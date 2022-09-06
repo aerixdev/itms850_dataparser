@@ -30,7 +30,7 @@
 |offset|Data|Unit|Description|
 |:----:|----|----|-----------|
 |0| Command Code | N/A | 스마트콤보 센서인 경우 0x01로 고정값 사용 |
-|1| Header | N/A | * bit 7 : N/A <br> * bit 6 : N/A <br> * bit 5 : high인 경우 압력값 부호 +, low인 경우 압력값 부호 - <br> * bit 4 : high인 경우 온도값 부호 +, low인 경우 온도값 부호 - <br> * bit 3 : DI Port 4 Output <br> * bit 2 : DI Port 3 Output <br> * bit 1 : DI Port 2 Output <br> * bit 0 : DI Port 1 Output |
+|1| Header | N/A | * bit 7 : N/A <br> * bit 6 : N/A <br> * bit 5 : high인 경우 압력값 부호 -, low인 경우 압력값 부호 + <br> * bit 4 : high인 경우 온도값 부호 -, low인 경우 온도값 부호 + <br> * bit 3 : DI Port 4 Output <br> * bit 2 : DI Port 3 Output <br> * bit 1 : DI Port 2 Output <br> * bit 0 : DI Port 1 Output |
 |2~3| AI Port 1 Output |mA| 4~20mA AI 출력 값 (Big Endian)|
 |4~5| AI Port 2 Output |mA| 4~20mA AI 출력 값 (Big Endian)|
 |6~7| Differential Pressure Sensor |mmH2O| 차압 센서 값 (Big Endian) |
