@@ -10,7 +10,7 @@
 * 프로그램 언어 : Python
 * 작성일 : 2022-09-06
 
-## MQTT 데이터 포맷 ##
+## MQTT 데이터 구성 ##
 
 스마트콤보 디바이스에서 MQTT 서버로 전송하는 데이터는 Json형식이며, 다음과 같이 구성되어 있습니다.
 
@@ -25,3 +25,21 @@
 ```
 {"time":"2022-08-23T12:10:27.000300Z","eui":1001,"payload":[1,0,0,0,0,0,0,0,0,0,4,22,0,220,0,0,0,0,0,62,37,115,0,0,0,0],"gateway_id":2}
 ```
+
+**Payload 데이터 포맷**
+|offset|Data|Unit|Description|
+|:----:|----|----|-----------|
+|0| Command Code | N/A | 스마트콤보 센서인 경우 0x01로 고정값 사용 |
+|1| Header | N/A | * bit 7 : N/A <br> * bit 6 : N/A <br> * bit 5 : high인 경우 압력값 부호 +, low인 경우 압력값 부호 - <br> * bit 4 : high인 경우 압력값 부호 +, low인 경우 압력값 부호 - <br> * bit 3 : DI Port 4 Output <br> * bit 2 : DI Port 3 Output <br> * bit 1 : DI Port 2 Output <br> * bit 0 : DI Port 1 Output |
+|2~3| AI Port 1 Output |mA| 4~20mA AI 출력 값 (Big Endian)|
+|4~5| AI Port 2 Output |mA| 4~20mA AI 출력 값 (Big Endian)|
+|6~7| Differential Pressure Sensor |mmH2O| 차압 센서 값 (Big Endian) |
+|8~9| Pressure Sensor | mBar | 압력 센서 값 (Big Endian) |
+|10| Temperature Part 1 | ℃ | 온도 값 정수 영역 값 |
+|11| Temperature Part 2 | ℃ | 온도 값 부동소수점 영역 값 |
+|12~13| Voltage | V | 전압 값 |
+|14~17| Current | mA | 전류 값 |
+|18~21| Power | wH | 소비 전력 값 |
+|22~25| Active Power | W | 유효 전력 값 |
+
+
