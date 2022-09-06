@@ -44,4 +44,11 @@
 |18~21| Power | wH | 소비 전력 값 (Big Endian) |
 |22~25| Active Power | W | 유효 전력 값 (Big Endian) |
 
+## 예제 프로그램 실행방법 ##
+
+MQTT 브로커 설정 정보는 config.json파일에 지정하도록 되어 있습니다. 프로그램 실행 전 MQTT 브로커 설정 정보를 테스트 환경에 맞도록 변경해주셔야 합니다.
+
+```
+python startApp.py
+```
 
