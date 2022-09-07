@@ -40,9 +40,8 @@ def itms_data_parser(payload):
     pres = payload[8]*0x100+payload[9]
     if(pres_sign==1):
         pres = 0 - pres # 음수로 변환
-    temp_part1 = payload[10]
-    temp_part2 = payload[11]
-    temp = float(str(temp_part1).zfill(2)+"."+str(temp_part2).zfill(2))
+    temp = payload[10]*0x100+payload[11]
+    temp = temp/100
     volt = payload[12]*0x100+payload[13]
     current = payload[14]*0x1000000+payload[15]*0x10000+payload[16]*0x100+payload[17]
     power = payload[18]*0x1000000+payload[19]*0x10000+payload[20]*0x100+payload[21]

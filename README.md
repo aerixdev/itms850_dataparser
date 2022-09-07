@@ -37,8 +37,7 @@
 |4~5| AI Port 2 Output |mA| 4~20mA AI 출력 값 (Big Endian)|
 |6~7| Differential Pressure Sensor |mmH2O| 차압 센서 값 (Big Endian) |
 |8~9| Pressure Sensor | mBar | 압력 센서 값 (Big Endian) |
-|10| Temperature Part 1 | ℃ | 온도 값 정수 영역 값  |
-|11| Temperature Part 2 | ℃ | 온도 값 부동소수점 영역 값  |
+|10~11| Temperature | ℃ | 온도 값 (Big Endian) **참고** 온도 값을 100으로 나눠서 사용해야 합니다.  |
 |12~13| Voltage | V | 전압 값 (Big Endian) |
 |14~17| Current | mA | 전류 값 (Big Endian) |
 |18~21| Power | wH | 소비 전력 값 (Big Endian) |
